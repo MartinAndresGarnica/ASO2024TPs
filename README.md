@@ -1,4 +1,4 @@
-Trabajo practico 3
+##Trabajo practico 3
 
 1.a) El codigo conhilos.py es mas rapido que sinhilos.py, por 1.6 segundos, es predecible ya que en el primer codigo los hilos se ejecutan al mismo tiempo
     y luego terminan , al contrario que sinhilos que se ejecutan y terminan las tareas una por una.
