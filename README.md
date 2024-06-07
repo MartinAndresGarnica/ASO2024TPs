@@ -5,9 +5,10 @@ Trabajo practico 3
     
 b) No son iguales, por la diferencia del procesador y sistema.
 
-c) Al descomentar las lineas de codigo lo que sucede es que cambia el resultado, en el primer caso el acumulador se termina cancelando ya que realizan,
-   tanto el la suma como la resta, la misma cantidad de calculos. Y en el  caso segundo el tiempo aumenta muchisimo, al agregarle un retraso 
-   puede que uno de los hilos termine mas rapido su tarea que otro entonces el resultado es distinto de 0.
+c) Al descomentar las lineas de codigo lo que sucede es que cambia el resultado, en el primer caso el acumulador, que es la variable global y el race condition,
+   se termina cancelando ya que realizan, tanto el la suma como la resta, la misma cantidad de calculos. Pero al compartir la variable puede que en alguna ejecucion un hilo termine antes que otro. 
+   Y en el segundo caso al agregarle un retraso fuerza el error y hace el race condition mas evidente. 
+   Entonces la suma o la resta puede realizar mas calculos lo que deja el acumulador con resultado distinto de 0
 
 2.a)
 ![Captura de pantalla_2024-05-16_16-36-32](https://github.com/MartinAndresGarnica/ASO2024TPs/assets/142854805/85953f4f-9080-4799-848c-14993cff3e87)
