@@ -6,6 +6,8 @@ sleep 0.5
 echo "Podras ganarme?"
 sleep 0.5
 
+# Bandera salir para terminar el juego
+
 while [ $salir -eq 1 ]
   do
     echo "Introduce una opcion"
@@ -14,9 +16,10 @@ cat <<myText
 1. Piedra
 2. Papel
 3. Tijera
-0. Salir del juego :(
+0. Salir del juego
 myText
     read jugador 
+    # Si el jugador introduce 0 sale del programa 
     if [ $jugador -eq 0 ];
       then
       salir=0
@@ -26,9 +29,10 @@ myText
        [ $jugador -eq "3" ] ||
        [ $jugador -eq "0" ];
     then 
-    computadora=$(shuf -i 1-3 -n 1)
+    computadora=$(shuf -i 1-3 -n 1)  # La computadora genera un valor del 1 al 3 aleatorio
 
-
+    # Estado del juego si se empata gana o pierde
+    # 1 = Piedra, 2 = Papel y 3 = Tijera 
     if [ $jugador -eq $computadora ]; 
       then
         echo "Empate"
@@ -40,7 +44,7 @@ myText
       else 
         echo "Perdiste"
     fi
-
+    # Eleccion de la computadora dependiendo numero
     if [ $computadora -eq "1" ];
       then
         echo "Elegi Piedra"
