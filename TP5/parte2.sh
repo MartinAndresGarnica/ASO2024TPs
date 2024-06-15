@@ -17,18 +17,17 @@ genero=$(echo $url | grep -o '"gender":[^,]*' | cut -d '"' -f 4)
 
 probabilidad=$(echo $url | grep -o '"probability":[^,^}]*' | cut -d ':' -f 2)
 
-# if para pasar el genero a español
-
-if [ $genero = "male" ]
+# Primer if es para mostrar los datos en caso que genero sea distinto de null
+# Segundo if para pasar de ingles a español
+if [ -n "$genero" ];
     then
-        genero="Hombre"
-    elif [ $genero = "female" ]
-        then
-            genero="Mujer"
-fi
-
-if [ -n "$genero" ]; 
-    then
+        if [ $genero = "male" ]
+            then
+                genero="Hombre"
+            elif [ $genero = "female" ]
+                then
+                    genero="Mujer"
+        fi  
         echo "El genero promedio del nombre $nombre es $genero con una probabilidad de $probabilidad"
     else
         echo "No se encontró información para el nombre $nombre"
